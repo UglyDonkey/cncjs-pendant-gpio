@@ -1,0 +1,49 @@
+{
+  "name": "cncjs-pendant-gpio",
+  "version": "0.0.0",
+  "author": "Ugly Donkey",
+  "bin": {
+    "cncjs-pendant-gpio": "./bin/run"
+  },
+  "bugs": "https://github.com/UglyDonkey/cncjs-pendant-gpio/issues",
+  "dependencies": {
+    "@oclif/command": "1",
+    "@oclif/config": "1",
+    "@oclif/plugin-help": "3",
+    "tslib": "1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "1",
+    "@types/node": "10",
+    "eslint": "5.16",
+    "eslint-config-oclif": "3.1",
+    "eslint-config-oclif-typescript": "0.1",
+    "rimraf": "3.0.2",
+    "ts-node": "8",
+    "typescript": "4.4.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib"
+  ],
+  "homepage": "https://github.com/UglyDonkey/cncjs-pendant-gpio",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "bin": "cncjs-pendant-gpio"
+  },
+  "repository": "UglyDonkey/cncjs-pendant-gpio",
+  "scripts": {
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rimraf lib && tsc -b && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
