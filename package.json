@@ -10,10 +10,15 @@
     "@oclif/command": "1",
     "@oclif/config": "1",
     "@oclif/plugin-help": "3",
+    "jsonwebtoken": "8.5.1",
+    "lodash": "4.17.21",
+    "socket.io-client": "2.3.0",
     "tslib": "1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "1",
+    "@types/jsonwebtoken": "8.5.5",
+    "@types/lodash": "4.14.172",
     "@types/node": "10",
     "eslint": "5.16",
     "eslint-config-oclif": "3.1",

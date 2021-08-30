@@ -1,28 +1,25 @@
 import {Command, flags} from '@oclif/command'
+const setupSocket = require('./connection/socket.js')
 
 class CncJsPendantGpio extends Command {
-  static description = 'describe the command here'
+  static description = 'cncjs pendant gpio'
 
   static flags = {
-    // add --version flag to show CLI version
     version: flags.version({char: 'v'}),
     help: flags.help({char: 'h'}),
-    // flag with a value (-n, --name=VALUE)
-    name: flags.string({char: 'n', description: 'name to print'}),
-    // flag with no value (-f, --force)
-    force: flags.boolean({char: 'f'}),
+    secret: flags.string(),
+    baudrate: flags.integer(),
+    socketAddress: flags.string(),
+    socketPort: flags.integer(),
+    controllerType: flags.string(),
+    accessTokenLifetime: flags.string(),
   }
 
-  static args = [{name: 'file'}]
+  static args = [{name: 'port', required: true}]
 
   async run() {
-    const {args, flags} = this.parse(CncJsPendantGpio)
-
-    const name = flags.name ?? 'world'
-    this.log(`hello ${name} from .\\src\\index.ts`)
-    if (args.file && flags.force) {
-      this.log(`you input --force and --file: ${args.file}`)
-    }
+    const {args: {port}, flags} = this.parse(CncJsPendantGpio)
+    setupSocket({port, ...flags}, (...args: any) => this.log(args))
   }
 }
 
