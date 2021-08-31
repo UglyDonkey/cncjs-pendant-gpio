@@ -1,5 +1,6 @@
-import setupSocket, {Options, Socket} from './socket'
+import setupSocket = require('./socket')
 import {promisify} from 'util'
+import {Options, Socket} from './socketTypes'
 
 class Connection {
   private readonly socket: Socket
@@ -12,7 +13,7 @@ class Connection {
   }
 
   sendGcode(gcode: string) {
-    this.socket.emit('write', this.port, gcode)
+    this.socket.emit('write', this.port, `${gcode}\n`)
   }
 }
 
