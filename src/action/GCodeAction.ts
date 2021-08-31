@@ -1,8 +1,11 @@
+import {getConnection} from '../connection/connection'
+
 export interface GCodeAction {
   type: 'gcode';
   gcode: string;
 }
 
 export const setupGCode = ({gcode}: GCodeAction) => {
-  return () => console.log(`gcode: ${gcode}`)
+  const connection = getConnection()
+  return () => connection.sendGcode(gcode)
 }
