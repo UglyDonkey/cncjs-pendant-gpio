@@ -1,13 +1,6 @@
-export interface GCodeAction {
-  type: 'gcode';
-  gcode: string;
-}
-
-export interface ConsoleLogAction {
-  type: 'console';
-  message: string;
-}
+import {LogAction} from './LogAction'
+import {GCodeAction} from './GCodeAction'
 
 export type Action =
   | GCodeAction
-  | ConsoleLogAction
+  | LogAction

@@ -1,16 +1,10 @@
-import {Action, ConsoleLogAction, GCodeAction} from './Action'
-
-function setupConsole({message}: ConsoleLogAction) {
-  return () => console.log(message)
-}
-
-function setupGCode({gcode}: GCodeAction) {
-  return () => console.log(`gcode: ${gcode}`)
-}
+import {Action} from './Action'
+import {setupLog} from './LogAction'
+import {setupGCode} from './GCodeAction'
 
 const setupAction = (action: Action): Function => {
   switch (action.type) {
-  case 'console': return setupConsole(action)
+  case 'log': return setupLog(action)
   case 'gcode': return setupGCode(action)
   }
 }

@@ -1,12 +1,4 @@
-import {Action} from '../action/Action'
-import {Edge} from 'onoff'
-
-export interface Button {
-  type: 'button';
-  gpio: number;
-  edge: Edge;
-  actions: Action[];
-}
+import {Button} from './Button'
 
 export type Pin =
   | Button
