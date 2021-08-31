@@ -1,6 +1,6 @@
 {
   "name": "cncjs-pendant-gpio",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Ugly Donkey",
   "bin": {
     "cncjs-pendant-gpio": "./bin/run"
@@ -37,7 +37,11 @@
   ],
   "homepage": "https://github.com/UglyDonkey/cncjs-pendant-gpio",
   "keywords": [
-    "oclif"
+    "cncjs",
+    "pendant",
+    "gpio",
+    "raspberry",
+    "pi"
   ],
   "license": "MIT",
   "main": "lib/index.js",
@@ -51,5 +55,6 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "description": "Configurable gpio pendant for cncjs"
 }
