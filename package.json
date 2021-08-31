@@ -1,6 +1,6 @@
 {
   "name": "cncjs-pendant-gpio",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "author": "Ugly Donkey",
   "bin": {
     "cncjs-pendant-gpio": "./bin/run"
@@ -10,6 +10,7 @@
     "@oclif/command": "1",
     "@oclif/config": "1",
     "@oclif/plugin-help": "3",
+    "iconv": "3.0.0",
     "jsonwebtoken": "8.5.1",
     "lodash": "4.17.21",
     "onoff": "6.0.3",
