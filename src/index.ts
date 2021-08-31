@@ -1,4 +1,5 @@
 import {Command, flags} from '@oclif/command'
+import {setupPins} from './pin/setupPins'
 const setupSocket = require('./connection/socket.js')
 
 class CncJsPendantGpio extends Command {
@@ -20,6 +21,7 @@ class CncJsPendantGpio extends Command {
   async run() {
     const {args: {port}, flags} = this.parse(CncJsPendantGpio)
     setupSocket({port, ...flags}, (...args: any) => this.log(args))
+    setupPins()
   }
 }
 

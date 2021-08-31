@@ -1,4 +1,8 @@
 {
+  "rules": {
+    "unicorn/filename-case": "off",
+    "no-console": "off"
+  },
   "extends": [
     "oclif",
     "oclif-typescript"
