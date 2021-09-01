@@ -31,7 +31,7 @@ cncjs-pendant-gpio loads json configuration from `~/cncjs-pendant-gpio`
 - [pin](#pin)
 - [action](#action)
 
-##Example
+## Example
 ```json
 {
   "pins": [{
