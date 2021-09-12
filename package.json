@@ -1,6 +1,6 @@
 {
   "name": "cncjs-pendant-gpio",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "author": "Ugly Donkey",
   "bin": {
     "cncjs-pendant-gpio": "./bin/run"
