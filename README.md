@@ -1,7 +1,6 @@
 cncjs-pendant-gpio
 ==================
 
-[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
 [![Version](https://img.shields.io/npm/v/cncjs-pendant-gpio.svg)](https://npmjs.org/package/cncjs-pendant-gpio)
 [![Downloads/week](https://img.shields.io/npm/dw/cncjs-pendant-gpio.svg)](https://npmjs.org/package/cncjs-pendant-gpio)
 [![License](https://img.shields.io/npm/l/cncjs-pendant-gpio.svg)](https://github.com/UglyDonkey/cncjs-pendant-gpio/blob/master/package.json)
@@ -19,15 +18,16 @@ npm install -g cncjs-pendant-gpio
 
 # Usage
 ```shell
-cncjs-pendant-gpio PORT
+cncjs-pendant-gpio [PORT]
 ```
-`PORT` - port of your controller
+`PORT` - port of your controller. If not specified then pendant connect to first opened port. For more information please read [this](#port)
 
 # Configuration
 
 cncjs-pendant-gpio loads json configuration from `~/cncjs-pendant-gpio`
 
 - [debounceTimeout](#debouncetimeout)
+- [port](#port)
 - [pin](#pin)
 - [action](#action)
 
@@ -60,6 +60,9 @@ cncjs-pendant-gpio loads json configuration from `~/cncjs-pendant-gpio`
 
 ## debounceTimeout
 Default is 20 ms
+
+## port
+If not specified then pendant tracks ports and connect to first opened (you probably already did it in cncjs app). If you have only one controller connected it's probably enough for you. In case of multiple controllers you can use this field to select port witch should be used. You can also specify that in [command](#usage).
 
 ## pin
 Every pin is described as an object. Field `type` defines type of pin.

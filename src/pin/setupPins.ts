@@ -9,5 +9,5 @@ const setupPin = (pin: Pin) => {
 }
 
 export const setupPins = () => {
-  config.pins.forEach(setupPin)
+  config().pins.forEach(setupPin)
 }

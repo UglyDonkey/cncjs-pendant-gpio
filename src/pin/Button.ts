@@ -13,6 +13,6 @@ export interface Button {
 export const setupButton = ({actions, gpio, edge}: Button) => {
   const callback = setupActions(actions)
 
-  const button = new Gpio(gpio, 'in', edge, {debounceTimeout: config.debounceTimeout})
+  const button = new Gpio(gpio, 'in', edge, {debounceTimeout: config().debounceTimeout})
   button.watch(callback)
 }

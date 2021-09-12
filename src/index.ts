@@ -1,6 +1,7 @@
 import {Command, flags} from '@oclif/command'
 import {setupPins} from './pin/setupPins'
 import {setupConnection} from './connection/connection'
+import {setupConfig} from './config'
 
 class CncJsPendantGpio extends Command {
   static description = 'cncjs pendant gpio'
@@ -16,11 +17,12 @@ class CncJsPendantGpio extends Command {
     accessTokenLifetime: flags.string(),
   }
 
-  static args = [{name: 'port', required: true}]
+  static args = [{name: 'port', required: false}]
 
   async run() {
     const {args: {port}, flags} = this.parse(CncJsPendantGpio)
-    await setupConnection({port, ...flags})
+    setupConfig({port, ...flags})
+    await setupConnection()
     setupPins()
   }
 }

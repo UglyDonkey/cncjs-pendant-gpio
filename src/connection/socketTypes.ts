@@ -1,5 +1,4 @@
 export interface Options {
-    port: string;
     secret?: string;
     baudrate?: number;
     socketAddress?: string;
@@ -9,5 +8,6 @@ export interface Options {
   }
   
   export interface Socket {
+    on: (event: string, callback: (data: any) => void) => void;
     emit: (event: string, ...args: any) => boolean;
   }

@@ -1,5 +1,12 @@
+import {Config, defaultConfig} from './Config';
 import {loadConfig} from './loadConfig'
 
-const config = loadConfig()
+let config = defaultConfig;
 
-export default config
+export const setupConfig = (params: Partial<Config>) => {
+    config = loadConfig(params)
+}
+
+const getConfig = () => config;
+
+export default getConfig;
